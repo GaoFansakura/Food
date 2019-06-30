@@ -130,7 +130,7 @@
 				
 				<ul>
 					<li>
-						<img src="FoodDataSet1/Penne Carbonara.jpg"/>
+						<img src="FoodDataSet1/penne carbonara.jpg"/>
 						<p>
 							health:5<br>
                             taste:5
@@ -238,7 +238,7 @@
                        </p>
                     </li>
                     <li>
-                       <img src="FoodDataSet1/Caesar salad.jpg"/>
+                       <img src="FoodDataSet1/Caesar Salad.jpg"/>
                        <p>
                           health:4 <br>
                           taste:8
@@ -286,9 +286,12 @@
 				<i></i>
 				<i></i>
 			</div>
+            <p id="lft">click_left_btn:0</p>
+            <p id="rgt">click_right_btn:0</p>
+            
 		</div>
 	</body>
-	<script type="text/javascript">
+      <script type="text/javascript">
 		var lis=document.getElementsByTagName("li");
 		var ul=document.getElementsByTagName("ul")[0];
 		var btns=document.getElementsByTagName("i");
@@ -296,6 +299,9 @@
 		var num=0;
 		var cont=0;
 		var x=0;
+		var i=0;
+		var j=0;
+		
 		sum=(lis[0].offsetWidth*lis.length)+(lis.length*4)+210;
 		num=Math.ceil(sum/650);
 		console.log(num)
@@ -305,14 +311,24 @@
 					x++;
 					cont=-656*x;
 					ul.style.transform="translateX("+cont+"px)";
+					
 				}
+				i++;
+				document.getElementById("rgt").innerHTML="click_right_btn:"+i;
 			}
 			btns[0].onclick=function(){
 				if(cont!=0){
 					x--;
 					cont+=656;
 					ul.style.transform="translateX("+cont+"px)";
+					
 				}
+				j++;
+				document.getElementById("lft").innerHTML="click_left_btn:"+j;
 			}
+		
+		
+
+   
 	</script>
 </html>
